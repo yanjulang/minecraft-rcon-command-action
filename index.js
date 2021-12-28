@@ -12,13 +12,16 @@ async function run() {
 		
 		const rcon = await Rcon.connect({host: host, port: port, password: password});
 		
-		console.log("executing command...")
+		console.log('connected to ${host}:${port}');
+		console.log('executing command "${command}"');
+		
 		console.log(await rcon.send(command));
+		
+		console.log('Done, exiting...');
 		rcon.end();
 	} catch (error) {
+		console.log('Error occurred!');
 		core.setFailed(error.message);
 	}
 }
-
-console.log("running...");
 run();
