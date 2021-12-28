@@ -1,0 +1,22 @@
+name: 'RCON-Command'
+description: 'Execute a command via rcon on a server'
+inputs:
+  host:
+    description: 'host to connect to'
+    required: true
+    default: 'server.host'
+  port:
+    description: 'rcon port'
+    required: true
+    default: 25575
+  password:
+    description: 'rcon password'
+    required: true
+    default: ''
+  command:
+    description: 'command to execute'
+    required: true
+    default: 'say RCON Command executed!'
+runs:
+  using: 'node12'
+  main: 'index.js'
